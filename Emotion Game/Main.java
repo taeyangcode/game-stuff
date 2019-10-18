@@ -2,7 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]) {
-        PlayerMsg playerGameTalk = new PlayerMsg();
-        playerGameTalk.playerGameMsg("MSG1", "MSG2");
+        Messages pTalk = new Messages();
+        Timer pause = new Timer();
+        
+        pTalk.playerMsg("sometimes i wonder", "what if my decision was different?");
+        pause.twoSecond();
+        pTalk.playerMsg("where would i be now, how would things be..", "different?");
+        
+        
+        
+        
+        
+        
     }
 }
