@@ -1,8 +1,8 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.Random;
 
-public class Timer {
-    
+public class Time {
+    Random rd = new Random();
     
     
     public void oneSecond() {
@@ -37,5 +37,12 @@ public class Timer {
             System.out.println(e);
         }
     }
-    
+    public void randomSecond() {
+        try {
+            Thread.sleep((rd.nextInt(4) + 1) * 1000);
+        }
+        catch(InterruptedException e) {
+            System.out.println(e);
+        }
+    }
 }
