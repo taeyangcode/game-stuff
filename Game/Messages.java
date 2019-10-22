@@ -2,15 +2,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Messages {
-    Timer pause = new Timer();
+    Time pause = new Time();
     
-    
-    public void playerMsg(ArrayList<String> list) {
-        for(String name: list) {
-            System.out.println(name);
+    public void Msg(String messages) {
+        String arrayMessages[] = messages.split("<lb>");
+        for(String temp: arrayMessages) {
+            System.out.println(temp);
+            pause.twoSecond();
         }
-    }
-    public void gameMsg() {
-        
     }
 }
