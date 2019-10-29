@@ -3,10 +3,16 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Game extends MouseAdapter {
+    int amount = 0;
+    String myString;
+    
     public void mouseClicked(MouseEvent e) {
-        System.out.println("abc");
+        amount++;
     }
     
+    public String getAmount() {
+        return myString = Integer.toString(amount);   
+    }
     
     
     
