@@ -1,17 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Franels {
+public class Franels extends MouseAdapter {
     int width, height;
-    
-    Game taker;
+    int amount = 0;
     
     JFrame frame = new JFrame("Title");
     JPanel panel = new JPanel();
     JButton button = new JButton("Hello");
-    JTextArea textArea = new JTextArea(taker.getAmount());
+    JLabel label = new JLabel();
     
-    public void JFrame(int width, int height) {
+    public void FrameConfig(int width, int height) {
         this.width = width;
         this.height = height;
         frame.setSize(width, height);
@@ -22,29 +22,25 @@ public class Franels {
         
         frame.add(panel);
         
-        frame.getContentPane().addMouseListener(new Game());
+        frame.getContentPane().addMouseListener(this);
     }
     
-    public void JPanel() {
+    public void PanelConfig() {
         panel.setBounds(300, 300, 300, 300);
         panel.setBackground(Color.blue);
         panel.setVisible(true);
         
-        //panel.add(button);
-        panel.add(textArea);
+        panel.add(label);        
     }
     
-    public void JText() {
-        textArea.setEditable(false);
+    public void LabelConfig() {
+        label.setForeground(Color.red);
     }
     
-    //public void JButton() {
-        //button.setBounds(300, 300, 80, 30);
-        //button.setBackground(Color.red);
-        //button.setVisible(true);
-    //}
-    
-    
+    public void mouseClicked(MouseEvent e) {
+        amount++;
+        label.setText(String.valueOf(amount));
+    }
     
     
     
