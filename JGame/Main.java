@@ -5,12 +5,9 @@ public class Main {
     
     
     public static void main(String args[]) {
-        Franels Windows = new Franels();
-        Windows.JFrame(900, 900);
-        Windows.JPanel();
-        Windows.JButton();
+        Franels windows = new Franels();
+        windows.FrameConfig(900, 900);
+        windows.PanelConfig();
+        windows.LabelConfig();
     }
-    
-    
-    
 }
