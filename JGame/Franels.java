@@ -1,45 +1,63 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.*;
 
 public class Franels extends MouseAdapter {
     int width, height;
     int amount = 0;
     
-    JFrame frame = new JFrame("Title");
-    JPanel panel = new JPanel();
-    JButton button = new JButton("Hello");
-    JLabel label = new JLabel();
+    JFrame cookieGameWindow = new JFrame("Title");
+    
+    JPanel cookiePanel = new JPanel();
+    JPanel amountPanel = new JPanel();
+    
+    JLabel cookieAmount = new JLabel();
+    JLabel cookieImage = new JLabel();
+    
+    ImageIcon image = new ImageIcon();
     
     public void FrameConfig(int width, int height) {
         this.width = width;
         this.height = height;
-        frame.setSize(width, height);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setLayout(null);
-        frame.setResizable(false);
+        cookieGameWindow.setSize(width, height);
+        cookieGameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        cookieGameWindow.setVisible(true);
+        cookieGameWindow.setLayout(null);
+        cookieGameWindow.setResizable(false);
         
-        frame.add(panel);
-        
-        frame.getContentPane().addMouseListener(this);
+        cookieGameWindow.add(amountPanel);
+        cookieGameWindow.add(cookiePanel);
+        //add the other panel here
     }
     
-    public void PanelConfig() {
-        panel.setBounds(300, 300, 300, 300);
-        panel.setBackground(Color.blue);
-        panel.setVisible(true);
+    public void AmountPConfig() {
+        amountPanel.setBounds(800, 450, 200, 200);
+        amountPanel.setVisible(true);
         
-        panel.add(label);        
+        cookiePanel.add(cookieAmount);
     }
     
-    public void LabelConfig() {
-        label.setForeground(Color.red);
+    public void CookiePConfig() {
+        cookiePanel.setBounds(300, 300, 300, 350);
+        cookiePanel.setVisible(true);
+        
+        cookiePanel.add(cookieImage);
     }
     
-    public void mouseClicked(MouseEvent e) {
-        amount++;
-        label.setText(String.valueOf(amount));
+    public void AmountLConfig() {
+        cookieAmount.setForeground(Color.red);
+    }
+    
+    public void CookieLConfig() {
+        cookieImage.setIcon(new ImageIcon("C:\\Users\\cmostero\\Downloads\\rsz_1cookie.png"));
+        
+        cookieImage.addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+            amount++;
+            cookieAmount.setText(String.valueOf(amount));
+        }
+        });
     }
     
     
