@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class Game {
     Player p1;
     Player p2;
-    ASCII wordArt;
+    Boolean checkIfGo = true;
     Player currentPlayer;
     Scanner sc = new Scanner(System.in);
     
     public Game() {
-        System.out.println(wordArt.ASCII());
         System.out.println("What is Player 1's name?");
         String p1Name = sc.nextLine();
         System.out.println("What is Player 2's name?");
@@ -22,7 +21,9 @@ public class Game {
         pigDice.start();
     }
     public void start() {
+        System.out.println(currentPlayer.pigDice());
         while(true) {
+            currentPlayer.pigDice();
             System.out.println(currentPlayer.getName() + " it's your turn");
             currentPlayer.printScore();
             currentPlayer.rollingDice();
@@ -55,6 +56,7 @@ public class Game {
         }
     }
     public void rollAgain() {
+        currentPlayer.winGameCheck();
         System.out.println("Would you like to roll? Y/N");
         String answer = sc.nextLine().toUpperCase();
         if(answer.equals("N")) {
@@ -62,7 +64,6 @@ public class Game {
             changePlayer();
         }
         else if(answer.equals("Y")) {
-            
         }
         else {
             System.out.println("That is an invalid input");
