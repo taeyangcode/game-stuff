@@ -28,7 +28,6 @@ public class Franels extends MouseAdapter {
         
         cookieGameWindow.add(amountPanel);
         cookieGameWindow.add(cookiePanel);
-        //add the other panel here
     }
     
     public void AmountPConfig() {
