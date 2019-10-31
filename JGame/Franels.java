@@ -9,10 +9,9 @@ public class Franels extends MouseAdapter {
     
     JFrame cookieGameWindow = new JFrame("Title");
     
-    JPanel cookiePanel = new JPanel();
-    JPanel amountPanel = new JPanel();
+    JPanel panelOrganizer = new JPanel(new BorderLayout());
     
-    JLabel cookieAmount = new JLabel();
+    JLabel cookieAmount = new JLabel(String.valueOf(amount));
     JLabel cookieImage = new JLabel();
     
     ImageIcon image = new ImageIcon();
@@ -23,33 +22,29 @@ public class Franels extends MouseAdapter {
         cookieGameWindow.setSize(width, height);
         cookieGameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         cookieGameWindow.setVisible(true);
-        cookieGameWindow.setLayout(null);
         cookieGameWindow.setResizable(false);
         
-        cookieGameWindow.add(amountPanel);
-        cookieGameWindow.add(cookiePanel);
+        cookieGameWindow.add(panelOrganizer);
+        //add the other panel here
     }
     
-    public void AmountPConfig() {
-        amountPanel.setBounds(800, 450, 200, 200);
-        amountPanel.setVisible(true);
-        
-        cookiePanel.add(cookieAmount);
-    }
-    
-    public void CookiePConfig() {
-        cookiePanel.setBounds(300, 300, 300, 350);
-        cookiePanel.setVisible(true);
-        
-        cookiePanel.add(cookieImage);
+    public void PanelHolder() {
+        panelOrganizer.add(cookieAmount, BorderLayout.NORTH);
+        panelOrganizer.add(cookieImage, BorderLayout.CENTER);
+        panelOrganizer.setVisible(true);
     }
     
     public void AmountLConfig() {
-        cookieAmount.setForeground(Color.red);
+        cookieAmount.setForeground(Color.black);
+        cookieAmount.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        cookieAmount.setHorizontalAlignment(JLabel.CENTER);
+        cookieAmount.setVerticalAlignment(JLabel.CENTER);
     }
     
     public void CookieLConfig() {
         cookieImage.setIcon(new ImageIcon("C:\\Users\\cmostero\\Downloads\\rsz_1cookie.png"));
+        cookieImage.setHorizontalAlignment(JLabel.CENTER);
+        cookieImage.setVerticalAlignment(JLabel.CENTER);
         
         cookieImage.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
