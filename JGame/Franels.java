@@ -25,7 +25,6 @@ public class Franels extends MouseAdapter {
         cookieGameWindow.setResizable(false);
         
         cookieGameWindow.add(panelOrganizer);
-        //add the other panel here
     }
     
     public void PanelHolder() {
