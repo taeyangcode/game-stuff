@@ -9,7 +9,7 @@ public class Franels extends MouseAdapter {
     
     JFrame cookieGameWindow = new JFrame("Title");
     
-    JPanel panelOrganizer = new JPanel(new BorderLayout());
+    JPanel cookieHolder = new JPanel();
     
     JLabel cookieAmount = new JLabel(String.valueOf(amount));
     JLabel cookieImage = new JLabel();
@@ -24,26 +24,26 @@ public class Franels extends MouseAdapter {
         cookieGameWindow.setVisible(true);
         cookieGameWindow.setResizable(false);
         
-        cookieGameWindow.add(panelOrganizer);
+        cookieGameWindow.add(cookieHolder);
     }
     
-    public void PanelHolder() {
-        panelOrganizer.add(cookieAmount, BorderLayout.NORTH);
-        panelOrganizer.add(cookieImage, BorderLayout.CENTER);
-        panelOrganizer.setVisible(true);
+    public void CookiePosOrganize() {
+        cookieHolder.setLayout(new GridLayout(3, 1));
+        
+        cookieHolder.add(cookieAmount);
+        cookieHolder.add(cookieImage);
     }
     
     public void AmountLConfig() {
         cookieAmount.setForeground(Color.black);
         cookieAmount.setFont(new Font("Times New Roman", Font.PLAIN, 48));
         cookieAmount.setHorizontalAlignment(JLabel.CENTER);
-        cookieAmount.setVerticalAlignment(JLabel.CENTER);
+        cookieAmount.setVerticalAlignment(JLabel.TOP);
     }
     
     public void CookieLConfig() {
-        cookieImage.setIcon(new ImageIcon("C:\\Users\\cmostero\\Downloads\\rsz_1cookie.png"));
+        cookieImage.setIcon(new ImageIcon("C:\\Users\\cmostero\\Downloads\\Webp.net-resizeimage.png"));
         cookieImage.setHorizontalAlignment(JLabel.CENTER);
-        cookieImage.setVerticalAlignment(JLabel.CENTER);
         
         cookieImage.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
