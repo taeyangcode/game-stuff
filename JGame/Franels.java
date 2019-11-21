@@ -28,7 +28,7 @@ public class Franels extends MouseAdapter {
     }
     
     public void CookiePosOrganize() {
-        cookieHolder.setLayout(new GridLayout(3, 1));
+        cookieHolder.setLayout(new GridLayout(3, 3));
         
         cookieHolder.add(cookieAmount);
         cookieHolder.add(cookieImage);
