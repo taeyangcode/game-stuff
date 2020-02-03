@@ -10,7 +10,8 @@ public class MineSetup {
     upgrades,
     */
 
-    void mineDetails(String mineType, String productionType, int productionAmount, int mineWidth, int mineHeight) {
+    MineSetup(String mineType, String productionType, int productionAmount, int cost, int mineWidth, int mineHeight) {
 
     }
+
 }
