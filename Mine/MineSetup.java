@@ -10,6 +10,9 @@ public class MineSetup {
     private ArrayList<Integer> cost = new ArrayList<Integer>();
     private ArrayList<Integer> prodAmount = new ArrayList<Integer>();
     private ArrayList<Integer> prodTimeMilli = new ArrayList<Integer>();
+    
+    private int mineAmount = 0;
+    private int mineNumber;
 
     /*
     needed for mines:
@@ -25,6 +28,8 @@ public class MineSetup {
         this.cost.add(cost);
         this.prodAmount.add(prodAmount);
         this.prodTimeMilli(prodTimeMilli);
+        mineAmount++;
+        this.mineNumber = mineAmount;
     }
 
     void setMineName(int position, String mineName) {
@@ -65,6 +70,14 @@ public class MineSetup {
 
     int getProdTime(int position) {
         return prodTimeMilli.get(position);;
+    }
+    
+    void setMineNumber(int setNumber) {
+        this.mineNumber = setNumber;
+    }
+    
+    int getMineNumber() {
+        return mineNumber;
     }
 
 }
