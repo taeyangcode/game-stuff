@@ -1,13 +1,15 @@
 package com.jetbrains;
 
+import java.util.*;
+
 public class MineSetup {
-
-    private String mineName;
-    private String mineType;
-
-    private int cost;
-    private int prodAmount;
-    private int prodTimeMilli;
+    
+    private ArrayList<String> mineName = new ArrayList<String>();
+    private ArrayList<String> mineType = new ArrayList<String>();
+    
+    private ArrayList<Integer> cost = new ArrayList<Integer>();
+    private ArrayList<Integer> prodAmount = new ArrayList<Integer>();
+    private ArrayList<Integer> prodTimeMilli = new ArrayList<Integer>();
 
     /*
     needed for mines:
@@ -18,44 +20,51 @@ public class MineSetup {
     */
 
     MineSetup(String mineName, String mineType, int cost, int prodAmount, int prodTimeMilli) {
+        this.mineName.add(mineName);
+        this.mineType.add(mineType);
+        this.cost.add(cost);
+        this.prodAmount.add(prodAmount);
+        this.prodTimeMilli(prodTimeMilli);
     }
 
-    void setMineName(String mineName) {
-        this.mineName = mineName;
+    void setMineName(int position, String mineName) {
+        this.mineName.set(position, mineName);
     }
 
-    String getMineName() {
-        return mineName;
+    String getMineName(int position) {
+        return mineName.get(position);
     }
 
-    void setMineType(String mineType) {
-        this.mineType = mineType;
+    void setMineType(int position, String mineType) {
+        this.mineType.set(position, mineType);
     }
 
-    String getMineType() {
-        return mineType;
+    String getMineType(int position) {
+        return mineType.get(position);
     }
 
-    void setCost(int cost) {
-        this.cost = cost;
+    void setCost(int position, int cost) {
+        this.cost.set(position, cost);
     }
 
-    int cost() {
-        return cost;
+    int cost(int position) {
+        return cost.get(position);
     }
 
-    void setProdAmount(int prodAmount) {
-        this.prodAmount = prodAmount;
+    void setProdAmount(int position, int prodAmount) {
+        this.prodAmount.set(position, prodAmount);
     }
 
-    int getProdAmount() {
-        return prodAmount;
+    int getProdAmount(int position) {
+        return prodAmount.get(position);;
     }
 
-    void setProdTime(int prodTimeMilli) { this.prodTimeMilli = prodTimeMilli; }
+    void setProdTime(int position, int prodTimeMilli) { 
+        this.prodTimeMilli.set(position, prodTimeMilli); 
+    }
 
-    int getProdTime() {
-        return prodTimeMilli;
+    int getProdTime(int position) {
+        return prodTimeMilli.get(position);;
     }
 
 }
