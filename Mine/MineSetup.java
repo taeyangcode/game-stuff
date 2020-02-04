@@ -3,14 +3,13 @@ package com.jetbrains;
 import java.util.*;
 
 public class MineSetup {
-    
+
     private ArrayList<String> mineName = new ArrayList<String>();
-    private ArrayList<String> mineType = new ArrayList<String>();
-    
+
     private ArrayList<Integer> cost = new ArrayList<Integer>();
     private ArrayList<Integer> prodAmount = new ArrayList<Integer>();
     private ArrayList<Integer> prodTimeMilli = new ArrayList<Integer>();
-    
+
     private int mineAmount = 0;
     private int mineNumber;
 
@@ -22,12 +21,11 @@ public class MineSetup {
     upgrades,
     */
 
-    MineSetup(String mineName, String mineType, int cost, int prodAmount, int prodTimeMilli) {
+    MineSetup(String mineName, int cost, int prodAmount, int prodTimeMilli) {
         this.mineName.add(mineName);
-        this.mineType.add(mineType);
         this.cost.add(cost);
         this.prodAmount.add(prodAmount);
-        this.prodTimeMilli(prodTimeMilli);
+        this.prodTimeMilli.add(prodTimeMilli);
         mineAmount++;
         this.mineNumber = mineAmount;
     }
@@ -38,14 +36,6 @@ public class MineSetup {
 
     String getMineName(int position) {
         return mineName.get(position);
-    }
-
-    void setMineType(int position, String mineType) {
-        this.mineType.set(position, mineType);
-    }
-
-    String getMineType(int position) {
-        return mineType.get(position);
     }
 
     void setCost(int position, int cost) {
@@ -61,21 +51,21 @@ public class MineSetup {
     }
 
     int getProdAmount(int position) {
-        return prodAmount.get(position);;
+        return prodAmount.get(position);
     }
 
-    void setProdTime(int position, int prodTimeMilli) { 
-        this.prodTimeMilli.set(position, prodTimeMilli); 
+    void setProdTime(int position, int prodTimeMilli) {
+        this.prodTimeMilli.set(position, prodTimeMilli);
     }
 
     int getProdTime(int position) {
-        return prodTimeMilli.get(position);;
+        return prodTimeMilli.get(position);
     }
-    
+
     void setMineNumber(int setNumber) {
         this.mineNumber = setNumber;
     }
-    
+
     int getMineNumber() {
         return mineNumber;
     }
