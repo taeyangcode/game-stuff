@@ -1,17 +1,19 @@
-package com.company;
+package com.jetbrains;
 
 public class MineralProduction {
 
-    MineSetup test;
+    MineSetup mineDetails;
+    Money moneyDetails;
 
-    private int copperPrice = 1;
-    private int silverPrice = 10;
-    private int goldPrice = 100;
+    private int copperAmount = mineDetails.getMineralAmount(mineDetails.getMineNumber());
+    private int silverAmount = mineDetails.getMineralAmount(mineDetails.getMineNumber());
+    private int goldAmount = mineDetails.getMineralAmount(mineDetails.getMineNumber());
 
-    void bronzeProduction() {
+    void copperProduction() {
         try {
-            Thread.sleep(test.getProdTime(test.getMineNumber()));
-            test.getProdAmount(test.getMineNumber());
+            Thread.sleep(mineDetails.getProdTime(mineDetails.getMineNumber()));
+            copperAmount += mineDetails.getProdAmount(mineDetails.getMineNumber());
+            moneyDetails.sellMineral();
         }
         catch (InterruptedException e) {
             e.printStackTrace();
@@ -19,11 +21,25 @@ public class MineralProduction {
     }
 
     void silverProduction() {
-
+        try {
+            Thread.sleep(mineDetails.getProdTime(mineDetails.getMineNumber()));
+            silverAmount += mineDetails.getProdAmount(mineDetails.getMineNumber());
+            moneyDetails.sellMineral();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     void goldProduction() {
-
+        try {
+            Thread.sleep(mineDetails.getProdTime(mineDetails.getMineNumber()));
+            goldAmount += mineDetails.getProdAmount(mineDetails.getMineNumber());
+            moneyDetails.sellMineral();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
