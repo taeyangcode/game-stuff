@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.company;
 
 public class MineralProduction {
 
