@@ -1,17 +1,17 @@
-package com.jetbrains;
+package com.company;
 
 public class Money {
 
     MineSetup mineDetails;
 
-    private int currentMoney = 0;
+    private int currentMoney = 500;
 
-    int buyMine() {
-        if(currentMoney - mineDetails.cost(mineDetails.getMineNumber()) > 0) {
-            currentMoney =- mineDetails.cost(mineDetails.getMineNumber());
-            //IF I CAN BUY THE MINE --> ADD MINE TO 2D ARRAY --> ELSE NOTHING (WHY THERE IS NO ELSE STATEMENT HERE)
+    boolean canBuyMine() {
+        boolean canBuy = false;
+        if(currentMoney - mineDetails.getCost(mineDetails.getMineNumber()) >= 0) {
+            canBuy = true;
         }
-        return currentMoney;
+        return canBuy;
     }
 
     int sellMineral() {
